@@ -12,7 +12,7 @@ def root():
 
 @app.route('/tests')
 def health():
-  return "Serveris darbojas Uh!"
+  return render_template("tests.html")
 
 if __name__ == '__main__':
-  app.run(debug=True,port=5000) # host='0.0.0.0' - datora IP adrese
+  app.run(debug=True,host='10.1.15.44',port=5000) # host='0.0.0.0' - datora IP adrese
