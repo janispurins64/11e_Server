@@ -3,6 +3,7 @@ from flask import Flask
 from flask import request
 from flask import url_for
 from flask import render_template
+from flask import jsonify
 
 app = Flask(__name__)
 
@@ -19,8 +20,12 @@ def uzruna():
 
 @app.route('/vards')
 def katevisauc():
-  return render_template("katevisauc.html")  
-  
+  return render_template("katevisauc.html") 
+ 
+@app.route('/dati')
+def dati():
+  aa = {'name':"bumba",'vecums':"16"}
+  return jsonify(aa)   
 
 @app.route('/tests')
 def health():
