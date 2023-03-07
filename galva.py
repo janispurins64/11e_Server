@@ -11,11 +11,17 @@ app = Flask(__name__)
 def root():
     return render_template("tests.html")
 
-@app.route('/uzruna')
+@app.route('/uzruna',methods=['GET', 'POST'])
 def uzruna():
-      
-      
-  return render_template("sveiciens.html",skaits="otrais")  
+   if request.method == 'POST':
+      vards1 = request.form['vards']
+      uzvards1 = request.form['uzvards']
+      return render_template("sveiciens.html",vards=vards1,uzvards=uzvards1)  
+   else:
+      vards1 = request.args.get('vards')
+      uzvards1 = request.args.get('uzvards')
+      return vards1, uzvards1
+  
   
 
 @app.route('/vards')
