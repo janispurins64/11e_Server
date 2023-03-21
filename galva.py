@@ -3,6 +3,7 @@ from flask import Flask
 from flask import request
 from flask import url_for
 from flask import render_template
+from flask import json
 from flask import jsonify
 
 app = Flask(__name__)
@@ -31,7 +32,41 @@ def katevisauc():
 @app.route('/dati')
 def dati():
   aa = {'name':"bumba",'vecums':"16"}
-  return jsonify(aa)   
+  return jsonify(aa)
+
+#----------------------------------------------------  
+# Lapa ar izkrītošo sarakstu.
+# Šo izsauc ar http://127.0.0.1:5000/saraksts
+@app.route('/virtuve')
+def virtuve():
+  return render_template("virtuve.html")
+# Rezervējam virtuves piederumus
+# Šo izsauc ar http://127.0.0.1:5000/rezerveshana
+@app.route('/rezerveshana')
+def rezerveshana():
+  piederumi = request.args.get('riiki')
+  skaits = request.args.get('skaits')
+  print("Izvēlētais piederums: ",piederumi)
+  print("Skaits: ",skaits)
+#------
+# Saglabāsim saņemtos datus teksta failā, bet var arī
+# datu bāzē. Izmantojam json formātu.
+  dati = {}
+  dati["v_piederums"] = piederumi
+  dati["skaits"] = skaits
+  with open("static/trauki.txt","a",encoding="UTF-8") as f1:
+    f1.write(json.dumps(dati))
+  return render_template("virtuve.html")
+
+# Tukšas formas izsaukums
+# Šo izsauc ar http://127.0.0.1:5000/personas
+@app.route('/personas')
+def personas():
+
+  return render_template("personas.html")
+
+
+#----------------------------------------------------      
 
 @app.route('/tests')
 def health():
