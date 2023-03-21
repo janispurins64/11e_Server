@@ -65,13 +65,15 @@ def personas():
   personas = []
   with open("static/personas.txt","r",encoding="UTF-8") as f1:
     for rinda in f1:
-      personas.append(rinda)   
+      personas.append(rinda)
+  print("Personu vārdi:",personas)   
   return jsonify({"personas": personas})
 
 # Tukšas formas izsaukums
 # Šo izsauc ar http://127.0.0.1:5000/visi
 @app.route('/visi')
 def visi():
+  print("Izsaucam lapu")
   return render_template("personas.html")
 
 #----------------------------------------------------      

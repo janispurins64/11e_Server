@@ -3,18 +3,24 @@
   <head>
     <title>Iznirstošs saraksts ar satura ģenerēšanu</title>        
     <meta charset="utf-8">
-    <link rel="stylesheet" href="static/style13.css">
-    <script src="static/fun.js"></script>
+    <link rel="stylesheet" href="../static/style13.css">
+    <script src="../static/fun.js"></script>
+	<script type="text/javascript" charset="UTF-8">
+    window.onload = () => {
+      lasiPersonas();
+    }
+  </script>
   </head>
   <body>
     <h1>Personas</h1>
-    <form action="lasiPersonas()">
+    <form>
         <!-- Izvēlamies rezervējamo lietu -->      
-        <label for="persona">Paersona:</label>
-        <select name="persona" class="persona1">
+        <label for="persona">Persona:</label>
+        <select name="persona" id="persona1">
+
         </select><br>
         <br><br>
-        <input type="submit" value="Submit">
+        <button type="button" onclick="lasiPersonas()">SŪTĪT</button>
       </form>
   </body>
 </html>
