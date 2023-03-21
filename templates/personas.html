@@ -4,13 +4,14 @@
     <title>Iznirstošs saraksts ar satura ģenerēšanu</title>        
     <meta charset="utf-8">
     <link rel="stylesheet" href="static/style13.css">
+    <script src="static/fun.js"></script>
   </head>
   <body>
     <h1>Personas</h1>
-    <form action="http://127.0.0.1:5000/persona">
+    <form action="lasiPersonas()">
         <!-- Izvēlamies rezervējamo lietu -->      
-        <label for="persona">Virtuves piederumi:</label>
-        <select name="persona" id="persona">
+        <label for="persona">Paersona:</label>
+        <select name="persona" class="persona1">
         </select><br>
         <br><br>
         <input type="submit" value="Submit">
