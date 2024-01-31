@@ -68,6 +68,16 @@ def personas():
       personas.append(rinda)
   print("Personu vārdi:",personas)   
   return jsonify({"personas": personas})
+# Paraugs
+# @app.route('/api/data', methods=['POST'])
+# def receive_data():
+#    data = request.json  # Saņem datus no POST pieprasījuma no Fetch
+    # Veiciet vajadzīgos apstrādes soļus ar datiem
+#    response_data = {'message': 'Dati saņemti veiksmīgi'}
+#    return jsonify(response_data) # Atgriež vērtību Fetch izsaukumam
+
+
+
 
 # Tukšas formas izsaukums
 # Šo izsauc ar http://127.0.0.1:5000/visi
