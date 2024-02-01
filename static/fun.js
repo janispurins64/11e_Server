@@ -1,6 +1,6 @@
 async function sendDataToServer() {
-    const url = 'http://127.0.0.1:5000/api/data';  // Aizstājiet ar savu servera adresi
-    const dataToSend = { key: 'value' };  // Jūsu nosūtāmie dati
+    const url = 'http://127.0.0.1:5000/dts';  // Aizstājiet ar savu servera adresi
+    const dataToSend = { vards: 'Juris', uzvards: "Vētra" };  // Jūsu nosūtāmie dati
 
     try {
         const response = await fetch(url, {

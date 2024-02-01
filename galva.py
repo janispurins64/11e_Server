@@ -69,14 +69,17 @@ def personas():
   print("Personu vārdi:",personas)   
   return jsonify({"personas": personas})
 # Paraugs
-# @app.route('/api/data', methods=['POST'])
-# def receive_data():
-#    data = request.json  # Saņem datus no POST pieprasījuma no Fetch
+@app.route('/dts', methods=['POST'])
+def receive_data():
+    data = request.json  # Saņem datus no POST pieprasījuma no Fetch
     # Veiciet vajadzīgos apstrādes soļus ar datiem
-#    response_data = {'message': 'Dati saņemti veiksmīgi'}
-#    return jsonify(response_data) # Atgriež vērtību Fetch izsaukumam
+    print(data)
+    response_data = {'message': 'Dati saņemti veiksmīgi'}
+    return jsonify(response_data) # Atgriež vērtību Fetch izsaukumam
 
-
+@app.route('/data')
+def dataa():
+  return render_template("data.html")
 
 
 # Tukšas formas izsaukums
