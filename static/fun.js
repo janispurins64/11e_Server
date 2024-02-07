@@ -1,7 +1,10 @@
 async function sendDataToServer() {
     const url = 'http://127.0.0.1:5000/dts';  // Aizstājiet ar savu servera adresi
     const dataToSend = { vards: 'Juris', uzvards: "Vētra" };  // Jūsu nosūtāmie dati
-
+    const lauks1 = document.getElementById("riiki");
+    const lauks2 = document.getElementById("skaits");
+    dataToSend["tips"] =lauks1.value;
+    dataToSend["skaits"] =lauks2.value ;
     try {
         const response = await fetch(url, {
             method: 'POST',

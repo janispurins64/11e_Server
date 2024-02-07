@@ -4,10 +4,11 @@
     <title>Iznirstošs saraksts</title>        
     <meta charset="utf-8">
     <link rel="stylesheet" href="static/style13.css">
+    <script src="../static/fun.js"></script>
   </head>
   <body>
     <h1>Virtuves piederumi</h1>
-    <form action="http://127.0.0.1:5000/rezerveshana">
+    <form>
         <!-- Izvēlamies rezervējamo lietu -->      
         <label for="piederumi">Virtuves piederumi:</label>
         <select name="riiki" id="riiki">
@@ -25,7 +26,7 @@
         <label for="skaits">Skaits (no 1 līdz 500):</label>
         <input type="number" id="skaits" name="skaits" min="1" max="500">
         <br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" onclick="sendDataToServer()">
       </form>
   </body>
 </html>
